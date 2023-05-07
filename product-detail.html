@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/vendor/css/bootstrap.min.css" class="css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./assets/css/style.css" class="css">
+    <link rel="stylesheet" href="./assets/css/headers.css" class="css">
+    <link rel="stylesheet" href="./assets/css/carousel.css" class="css">
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 引入组件库 -->
+
+</head>
+
+<body>
+    <div id="app"><!-- Header start -->
+        <!-- Header start -->
+        <header class="p-3 text-bg-dark">
+            <div class="container">
+                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                    <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
+                            <use xlink:href="#bootstrap" />
+                        </svg>
+                    </a>
+
+                    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                        <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
+                        <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
+                        <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
+                        <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
+                        <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+                    </ul>
+
+                    <nav class="navbar navbar-expand-md navbar-dark bg-dark" aria-label="Fourth navbar example">
+                        <div class="container-fluid">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarsExample04" aria-controls="navbarsExample04"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+
+                            <div class="collapse navbar-collapse" id="navbarsExample04">
+                                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
+                                            aria-expanded="false"><img src="./assets/img/icon/USD.jpg" alt=""
+                                                class="src language-item">English</a>
+                                        <ul class="dropdown-menu language">
+                                            <li>
+                                                <a class="dropdown-item" href="#">
+                                                    <img src="./assets/img/icon/CNY.jpg" alt=""
+                                                        class="src language-item">
+                                                    Simplified Chinese
+                                                </a>
+                                            </li>
+                                            <li>
+
+                                                <a class="dropdown-item" href="#">
+                                                    <img src="./assets/img/icon/CNY.jpg" alt=""
+                                                        class="src language-item">
+                                                    Traditional Chinese</a>
+                                            </li>
+                                            <li>
+
+                                                <a class="dropdown-item" href="#">
+                                                    <img src="./assets/img/icon/USD.jpg" alt=""
+                                                        class="src language-item">
+                                                    English</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+
+
+                    <div class="dropdown text-end">
+                        <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32"
+                                class="rounded-circle">
+                        </a>
+                        <ul class="dropdown-menu text-small">
+                            <li><a class="dropdown-item" href="#">My orders</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Sign out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- content end -->
+        <div class="container product_wrap marketing">
+            <div class="product">
+                <div class="payment_area">
+                    <div class="product-info ">
+                        <img :src="countedPrice.image" alt="" class="product-img">
+                        <p class="fw-normal product-name" v-text="countedPrice.title"></p>
+                        <p>
+                        <p class="product-desc" v-text="countedPrice.desc"></p>
+                        <el-button type="primary" v-text="countedPrice.name" disabled></el-button>
+                        <!-- <div class="dt-text" id="psvNameDiv"
+                            style="text-align: center; line-height: 40px;color: #fff; font-size: 12px; background: #FFAB8E; border-radius: .3rem;"
+                            >
+                        </div> -->
+                    </div>
+                    <div class=" product-options">
+                        <div class="product-pick_area">
+                            <el-radio-group type="warning" v-model="productCode" size="small">
+                                <el-radio-button v-for="item in productList"
+                                    :label="item.code">{{item.name}}</el-radio-button>
+                            </el-radio-group>
+                            <el-form  ref="ruleform" class="product-option-form" size="medium" label-width="148px"
+                                label-position="left" :model="validForm">
+                                <el-form-item label="Quantities:" prop="num">
+                                    <el-input-number style="width:220px;" v-model="validForm.num" :min="1" :max="10"
+                                        label="Quantities"></el-input-number>
+                                </el-form-item>
+                                <el-form-item label="Recharge Account:" required prop="account">
+                                    <el-input style="width:220px;" v-model="validForm.account"
+                                        label="Recharge Account"></el-input-number>
+                                </el-form-item>
+                            </el-form>
+                        </div>
+                        <div class="settltment">
+                            <el-button size="medium" type="primary" class="buy-btn" @click="openDialog">
+                                <span class="price">
+                                    <span class="origin-price" v-text="`USD$ ${countedPrice.dataSale}`"></span>
+                                    <span class="discounted-price" v-text="`USD$ ${countedPrice.dataSpecial}`"></span>
+                                    <span>&nbsp;Buy Now&nbsp;</span>
+                                </span>
+                            </el-button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-rt-sider">
+                    <div class="fast-buy">
+                        <div class="fast-buy-item">
+                            <div class="title">How To Buy?</div>
+                        </div>
+                        <div class="fast-buy-item">
+                            <div class="title">Choose your item</div>
+                            <p class="desc">
+                                If you can not find the item you need, please contact us.
+                            </p>
+                        </div>
+                        <div class="fast-buy-item">
+                            <div class="title">Finish the payment</div>
+                            <p class="desc">
+                                Vpayfast accept more than 60 local payment methods.
+                            </p>
+                        </div>
+                        <div class="fast-buy-item">
+                            <div class="title">About delivery</div>
+                            <p class="desc">
+                                Vpayfast will contact you in minutes to finish the delivery.
+                            </p>
+                        </div>
+                        <div class="fast-buy-item">
+                            <div class="title">Confirm delivery</div>
+                            <p class="desc">
+                                The order is finished after you confirm the delivery.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="index-products recommend-products">
+                <h3 class="title">Recommend Products</h3>
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3 hot-product">
+                    <div class="col ">
+                        <div class="product-item box-shadow">
+                            <img src="./assets/img/products/douyin.jpg" alt="" class="product-img">
+                            <h2 class="fw-normal product-name">Douyin(TikTok in China)</h2>
+                            <p>
+                            <p class="quantity"> <span class="count">3000</span> <span class="unit">Diamonds</span><span
+                                    class="discount">(17%)</span> </p>
+                            <p class="price origin-price"><span class="monetary-unit">USD$</span>&nbsp;&nbsp;<span
+                                    class="price">15.75</span></p>
+                            <p class="price discounted-price"><span class="monetary-unit">USD$</span>&nbsp;&nbsp;<span
+                                    class="price">15.75</span></p>
+                            </p>
+                            <p class="product-buy"><a class="btn btn-secondary" href="#">Buy Now &raquo;</a></p>
+                        </div>
+                    </div>
+                    <div class="col ">
+                        <div class="product-item box-shadow">
+                            <img src="./assets/img/products/douyin.jpg" alt="" class="product-img">
+                            <h2 class="fw-normal product-name">Douyin(TikTok in China)</h2>
+                            <p>
+                            <p class="quantity"> <span class="count">3000</span> <span class="unit">Diamonds</span><span
+                                    class="discount">(17%)</span> </p>
+                            <p class="price origin-price"><span class="monetary-unit">USD$</span>&nbsp;&nbsp;<span
+                                    class="price">15.75</span></p>
+                            <p class="price discounted-price"><span class="monetary-unit">USD$</span>&nbsp;&nbsp;<span
+                                    class="price">15.75</span></p>
+                            </p>
+                            <p class="product-buy"><a class="btn btn-secondary" href="#">Buy Now &raquo;</a></p>
+                        </div>
+                    </div>
+                    <div class="col ">
+                        <div class="product-item box-shadow">
+                            <img src="./assets/img/products/douyin.jpg" alt="" class="product-img">
+                            <h2 class="fw-normal product-name">Douyin(TikTok in China)</h2>
+                            <p>
+                            <p class="quantity"> <span class="count">3000</span> <span class="unit">Diamonds</span><span
+                                    class="discount">(17%)</span> </p>
+                            <p class="price origin-price"><span class="monetary-unit">USD$</span>&nbsp;&nbsp;<span
+                                    class="price">15.75</span></p>
+                            <p class="price discounted-price"><span class="monetary-unit">USD$</span>&nbsp;&nbsp;<span
+                                    class="price">15.75</span></p>
+                            </p>
+                            <p class="product-buy"><a class="btn btn-secondary" href="#">Buy Now &raquo;</a></p>
+                        </div>
+                    </div>
+                    <div class="col ">
+                        <div class="product-item box-shadow">
+                            <img src="./assets/img/products/douyin.jpg" alt="" class="product-img">
+                            <h2 class="fw-normal product-name">Douyin(TikTok in China)</h2>
+                            <p>
+                            <p class="quantity"> <span class="count">3000</span> <span class="unit">Diamonds</span><span
+                                    class="discount">(17%)</span> </p>
+                            <p class="price origin-price"><span class="monetary-unit">USD$</span>&nbsp;&nbsp;<span
+                                    class="price">15.75</span></p>
+                            <p class="price discounted-price"><span class="monetary-unit">USD$</span>&nbsp;&nbsp;<span
+                                    class="price">15.75</span></p>
+                            </p>
+                            <p class="product-buy"><a class="btn btn-secondary" href="#">Buy Now &raquo;</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-detail">
+                    <div class="tips">
+                        <h5 class="title">Tips:</h5>
+                        <ol>
+                            <li>If you recharge for others, please beware of scams.</li>
+                            <li> For Gift card items, please redeem on official websites instead of third party
+                                platforms
+                                in
+                                time.</li>
+                            <li>Please make sure all the information in your order is correct.</li>
+                            <li>For any other problem, please feel free to contact us.</li>
+                        </ol>
+                    </div>
+                    <ul class="tips">
+                        <li>Professional recharge</li>
+                        <li>Delivery in minutes</li>
+                        <li>7*24 Hours onlin</li>
+                    </ul>
+                    <div class="recharge-recharge tips">
+                        <h5 class="title">How to recharge BIGO LIVE?</h5>
+                        <div class="detail">
+                            1. Make an order of Uplive diamonds, you can choose the quantity of diamonds;<br />
+
+                            2. Leave your Uplive account information before paying;<br />
+
+                            3. Make payment of Uplive diamonds on vpayfast, then we will top up your Uplive
+                            account.<br />
+
+
+                            Just recharge Uplive diamonds, then you can buy more with diamonds on Uplive.
+
+                            1 RMB=10 Uplive diamonds
+                        </div>
+                    </div>
+                    <div class="about-delivery tips">
+                        <h5 class="title">About Delivery:</h5>
+                        <ol>
+                            <li>We will recharge for your BIGO LIVE account left in your order directly.</li>
+                            <li>Please login in your account and have a check after finishing the order.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- content end -->
+
+        <!-- Footer start -->
+        <footer class="py-3 my-4">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+            </ul>
+            <p class="text-center text-muted">&copy; 2022 Company, Inc</p>
+        </footer>
+        <!-- Footer end -->
+        <el-dialog width="890px" size="medium" title="Confirm Your Order" :visible.sync="dialogTableVisible">
+            <p v-text="countedPrice.title"></p>
+            <p v-text="countedPrice.desc"></p>
+            <el-descriptions :column="1">
+                <el-descriptions-item label="Products" v-text="countedPrice.name">{{countedPrice.name}}</el-descriptions-item>
+                <el-descriptions-item label="Quantities" v-text="validForm.num">{{validForm.num}}</el-descriptions-item>
+                <el-descriptions-item label="Recharge Account" v-text="validForm.account">{{validForm.account}}</el-descriptions-item>
+                <el-descriptions-item label="Total" v-text="countedPrice.dataSpecial">{{'USD$ ' + countedPrice.dataSpecial}}</el-descriptions-item>
+            </el-descriptions>
+            <!-- bill-form start -->
+            <form v-show="false" action="http://www.baidu.com">
+                <input type="text" :value="productCode" name="code" disabled>
+                <input type="text" :value="validForm.num" name="quantity" disabled>
+                <input type="text" :value="validForm.account" name="account" disabled>
+                <input id="submit-btn" type="submit" />
+            </form>
+            <!-- bill-form end -->
+            <div slot="footer" class="dialog-footer">
+                <el-button size="mini" @click="cancle">cancle</el-button>
+                <el-button size="mini" type="primary" @click="confirm">confirm</el-button>
+            </div>
+        </el-dialog>
+    </div>
+</body>
+<script src="https://unpkg.com/vue@2/dist/vue.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14"></script> -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script src="./assets/vendor/js/bootstrap.bundle.min.js"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data() {
+            return {
+                dialogTableVisible: false,
+                productCode: '',
+                validForm: {
+                    num: 1,
+                    account: '',
+                    type: ''
+                },
+                productList: [
+                    {
+                        code: 1,
+                        name: '980 Coins(13%OFF)',
+                        title: 'Douyin(TikTok in China)',
+                        dataSale: "17.8",
+                        dataSpecial: "15.75",
+                        desc: 'This product is Chinese Douyin, not Tiktok Global',
+                        image: './assets/img/products/douyin.jpg'
+                    },
+                    {
+                        code: 2,
+                        name: '1180 Coins(13%OFF)',
+                        title: 'Douyin(TikTok in China)',
+                        dataSale: "175.8",
+                        dataSpecial: "115.75",
+                        desc: 'some thing desc2',
+                        image: './assets/img/products/douyin.jpg'
+                    },
+                    {
+                        code: 3,
+                        name: '2280 Coins(13%OFF)',
+                        title: 'Douyin(TikTok in China)',
+                        dataSale: "10.8",
+                        dataSpecial: "5.75",
+                        desc: 'some thing desc3',
+                        image: './assets/img/products/douyin.jpg'
+                    },
+                    {
+                        code: 4,
+                        name: '680 Coins',
+                        title: 'Douyin(TikTok in China)',
+                        dataSale: "7.8",
+                        dataSpecial: "5.75",
+                        desc: 'some thing desc4',
+                        image: './assets/img/products/douyin.jpg'
+                    },
+                    {
+                        code: 5,
+                        name: '1080 Coins',
+                        title: 'Douyin(TikTok in China)',
+                        dataSale: "7.8",
+                        dataSpecial: "5.75",
+                        desc: 'some thing desc5',
+                        image: './assets/img/products/douyin.jpg'
+                    },
+                    {
+                        code: 6,
+                        name: '2000 Coins',
+                        title: 'Douyin(TikTok in China)',
+                        dataSale: "7.8",
+                        dataSpecial: "5.75",
+                        desc: 'some thing desc6',
+                        image: './assets/img/products/douyin.jpg'
+                    }
+                ]
+            }
+        },
+        methods: {
+            openDialog() {
+                console.log();
+                this.$refs.ruleform.validate((valid) => {
+                    if (valid) {
+                        this.dialogTableVisible = true
+                    } else {
+                        console.log('error submit!!');
+                        return false;
+                    }
+                });
+
+            },
+            closeDialog() {
+                this.dialogTableVisible = false
+            },
+            confirm() {
+                document.getElementById('submit-btn').click()
+                this.closeDialog()
+            },
+            cancle() {
+                this.closeDialog()
+            }
+        },
+        computed: {
+            countedPrice() {
+                let dataSale = 0
+                let dataSpecial = 0
+                let image = '#'
+                let desc = ''
+                let name = ''
+                let title = ''
+                const selectedProduct = this.productList.find(p => p.code === this.productCode)
+                if (selectedProduct) {
+                    image = selectedProduct.image
+                    desc = selectedProduct.desc
+                    name = selectedProduct.name
+                    title = selectedProduct.title
+                    dataSale = parseFloat(selectedProduct.dataSale * this.validForm.num * 1000).toFixed(2) / 1000
+                    dataSpecial = parseFloat(selectedProduct.dataSpecial * this.validForm.num * 1000).toFixed(2) / 1000
+                }
+                return {
+                    dataSale,
+                    dataSpecial,
+                    image,
+                    title,
+                    desc,
+                    name
+                }
+            }
+        },
+        mounted() {
+            this.productList.length && (this.productCode = this.productList[0].code)
+        }
+    })
+
+</script>
+
+</html>

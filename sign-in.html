@@ -90,19 +90,25 @@
     <main class="form-signin w-100 m-auto">
         <form>
             <img class="mb-4" src="./assets/img/brand/bootstrap-logo.svg" alt="" width="72" height="57">
-            <h1 class="h3 mb-3 fw-normal">Please Login</h1>
+            <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
             <div id="login-fail" class="alert alert-warning alert-dismissible fade show " role="alert">
                 <strong>Holy guacamole!</strong> You should check in on some of those fields below.
                 <button type="button" id="login-alert-close" class="btn-close" data-bs-dismiss="alert"
                     aria-label="Close"></button>
             </div>
             <div class="form-floating">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                <label for="floatingInput">Email address</label>
+                <input class="form-control" id="floatingInput" placeholder="name@example.com" name="account">
+                <label for="floatingInput">Account</label>
             </div>
             <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password"
+                    name="password">
                 <label for="floatingPassword">Password</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control" id="checkPassword" placeholder="CheckedPassword"
+                    name="checkedPassword">
+                <label for="checkPassword">Check Password</label>
             </div>
 
             <div class="checkbox mb-3">
@@ -110,7 +116,7 @@
                     <input type="checkbox" value="remember-me"> Remember me
                 </label>
             </div>
-            <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+            <button id="signInBtn" class="w-100 btn btn-lg btn-primary disabled" type="submit">Sign in</button>
 
         </form>
     </main>
@@ -131,13 +137,13 @@
 <script src="./assets/vendor/js/bootstrap.bundle.min.js"></script>
 <script>
     window.onload = (() => {
-        window.onload = (() => {
         const account = document.getElementById('floatingInput')
         const password = document.getElementById('floatingPassword')
+        const checkedPassword = document.getElementById('checkPassword')
         const signInBtn = document.getElementById('signInBtn')
         const closeBtn = document.getElementById('login-alert-close')
         const checkEmptyForm = () => {
-            if (account.value && password.value ) {
+            if (account.value && password.value && checkedPassword.value) {
                 signInBtn.className = signInBtn.className.replace('disabled', '')
             } else {
                 const hasDisabled = signInBtn.className.includes('disabled')
@@ -148,13 +154,14 @@
         account.addEventListener('input', checkEmptyForm)
         password.addEventListener('blur', checkEmptyForm)
         password.addEventListener('input', checkEmptyForm)
+        checkedPassword.addEventListener('blur', checkEmptyForm)
+        checkedPassword.addEventListener('input', checkEmptyForm)
         closeBtn.onclick = ((e) => {
             e.stopPropagation()
             const parentNode = closeBtn.parentNode
             const className = parentNode.className
             parentNode.className = parentNode.className.replace('show', '')
         })
-    })
     })
 </script>
 

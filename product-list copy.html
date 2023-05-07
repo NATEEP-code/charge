@@ -1,23 +1,18 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.108.0">
-    <title>Signin Template · Bootstrap v5.3</title>
-
-    <!-- <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sign-in/"> -->
-    <link rel="stylesheet" href="./assets/css/headers.css" class="css">
-    <link href="./assets/vendor/css/bootstrap.min.css" rel="stylesheet">
-    <link href="./assets/css/sign-in.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/vendor/css/bootstrap.min.css" class="css">
     <link rel="stylesheet" href="./assets/css/style.css" class="css">
-
+    <link rel="stylesheet" href="./assets/css/headers.css" class="css">
+    <link rel="stylesheet" href="./assets/css/carousel.css" class="css">
 </head>
 
-<body class="text-center">
+<body>
     <!-- Header start -->
     <header class="p-3 text-bg-dark">
         <div class="container">
@@ -77,43 +72,26 @@
                 </nav>
 
 
-                <div class="text-end">
-                    <button type="button" class="btn btn-outline-light me-2">Login</button>
-                    <button type="button" class="btn btn-warning">
-                        <a href="./login.html">Sign-up</a>
-                    </button>
+                <div class="dropdown text-end">
+                    <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+                    </a>
+                    <ul class="dropdown-menu text-small">
+                        <li><a class="dropdown-item" href="#">My orders</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Sign out</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </header>
+    
     <!-- Header end -->
-    <main class="form-signin w-100 m-auto">
-        <form>
-            <img class="mb-4" src="./assets/img/brand/bootstrap-logo.svg" alt="" width="72" height="57">
-            <h1 class="h3 mb-3 fw-normal">Please Login</h1>
-            <div id="login-fail" class="alert alert-warning alert-dismissible fade show " role="alert">
-                <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-                <button type="button" id="login-alert-close" class="btn-close" data-bs-dismiss="alert"
-                    aria-label="Close"></button>
-            </div>
-            <div class="form-floating">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                <label for="floatingInput">Email address</label>
-            </div>
-            <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                <label for="floatingPassword">Password</label>
-            </div>
 
-            <div class="checkbox mb-3">
-                <label>
-                    <input type="checkbox" value="remember-me"> Remember me
-                </label>
-            </div>
-            <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
 
-        </form>
-    </main>
+    <!-- Container start -->
+    <!-- Container end -->
 
     <!-- Footer start -->
     <footer class="py-3 my-4">
@@ -129,33 +107,5 @@
     <!-- Footer end -->
 </body>
 <script src="./assets/vendor/js/bootstrap.bundle.min.js"></script>
-<script>
-    window.onload = (() => {
-        window.onload = (() => {
-        const account = document.getElementById('floatingInput')
-        const password = document.getElementById('floatingPassword')
-        const signInBtn = document.getElementById('signInBtn')
-        const closeBtn = document.getElementById('login-alert-close')
-        const checkEmptyForm = () => {
-            if (account.value && password.value ) {
-                signInBtn.className = signInBtn.className.replace('disabled', '')
-            } else {
-                const hasDisabled = signInBtn.className.includes('disabled')
-                !hasDisabled && (signInBtn.className = signInBtn.className + 'disabled')
-            }
-        }
-        account.addEventListener('blur', checkEmptyForm)
-        account.addEventListener('input', checkEmptyForm)
-        password.addEventListener('blur', checkEmptyForm)
-        password.addEventListener('input', checkEmptyForm)
-        closeBtn.onclick = ((e) => {
-            e.stopPropagation()
-            const parentNode = closeBtn.parentNode
-            const className = parentNode.className
-            parentNode.className = parentNode.className.replace('show', '')
-        })
-    })
-    })
-</script>
 
 </html>

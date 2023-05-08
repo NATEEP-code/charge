@@ -2,11 +2,11 @@
 body {
   margin: 0;
   padding: 0;
-  font-size: 14px;
-  line-height: 1.5;
 }
 html,
 body {
+  font-size: 14px;
+  line-height: 1.5;
   height: 100%;
 }
 
@@ -26,10 +26,11 @@ body {
 
 .b-example-divider {
   height: 3rem;
-  background-color: rgba(0, 0, 0, .1);
-  border: solid rgba(0, 0, 0, .15);
+  background-color: rgba(0, 0, 0, 0.1);
+  border: solid rgba(0, 0, 0, 0.15);
   border-width: 1px 0;
-  box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+  box-shadow: inset 0 0.5em 1.5em rgba(0, 0, 0, 0.1),
+    inset 0 0.125em 0.5em rgba(0, 0, 0, 0.15);
 }
 
 .b-example-vr {
@@ -39,7 +40,7 @@ body {
 }
 
 .bi {
-  vertical-align: -.125em;
+  vertical-align: -0.125em;
   fill: currentColor;
 }
 
@@ -117,10 +118,9 @@ a {
 
 /* rtl:begin:ignore */
 .marketing .index-products p {
-  margin-right: .75rem;
-  margin-left: .75rem;
+  margin-right: 0.75rem;
+  margin-left: 0.75rem;
 }
-
 
 .index-title {
   margin: 3em 0;
@@ -133,7 +133,7 @@ a {
 }
 
 .commet-star {
-  color: #F18E00;
+  color: #f18e00;
 }
 
 .commet-title {
@@ -156,7 +156,6 @@ a {
 .commet-star .bi-star-fill {
   margin-right: 0.5em;
 }
-
 
 .qa-wrap {
   margin-bottom: 2em;
@@ -201,6 +200,7 @@ a {
 }
 
 .payment_area {
+  background: #fff;
   justify-content: space-around;
   display: flex;
   flex-direction: row;
@@ -220,6 +220,7 @@ a {
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0px 0px 8px 0px #7777776b;
+  background: #fff;
 }
 
 .product-info {
@@ -251,11 +252,10 @@ a {
 .el-radio-group .el-radio-button {
   margin-right: 0.5em;
   margin-bottom: 1em;
-
 }
 
-.el-radio-group .el-radio-button>.el-radio-button__inner {
-  border: 1px solid #DCDFE6;
+.el-radio-group .el-radio-button > .el-radio-button__inner {
+  border: 1px solid #dcdfe6;
   border-radius: 5px;
 }
 
@@ -308,8 +308,8 @@ a {
   position: relative;
 }
 
-.fast-buy>.fast-buy-item:nth-child(even),
-.fast-buy>.fast-buy-item:nth-child(even)::after {
+.fast-buy > .fast-buy-item:nth-child(even),
+.fast-buy > .fast-buy-item:nth-child(even)::after {
   background-color: #f0f0f0;
 }
 
@@ -318,7 +318,7 @@ a {
 }
 
 .fast-buy-item::after {
-  content: '';
+  content: "";
   position: absolute;
   height: 10px;
   width: 10px;
@@ -329,7 +329,7 @@ a {
   transform: translateX(-50%) rotate(45deg);
 }
 
-.fast-buy>.fast-buy-item:last-child::after {
+.fast-buy > .fast-buy-item:last-child::after {
   height: 0;
   width: 0;
 }
@@ -353,7 +353,7 @@ a {
 
 .tips {
   font-size: 12px;
-  color: #7F7F7F;
+  color: #7f7f7f;
 }
 
 .recharge-recharge .detail {
@@ -377,13 +377,13 @@ a {
 .product-info .el-button--primary.is-disabled:active,
 .product-info .el-button--primary.is-disabled:focus,
 .product-info .el-button--primary.is-disabled:hover {
-  cursor: default
+  cursor: default;
 }
 .pagination_wrap {
   display: flex;
   justify-content: center;
 }
-.commet-item-header .user-name{
+.commet-item-header .user-name {
   margin-left: 0.5em;
   color: #939393;
   position: relative;
@@ -396,7 +396,8 @@ a {
 .product-list {
   padding: 0 4em;
 }
-.product-list .list-item ,.hot-product{
+.product-list .list-item,
+.hot-product {
   padding-bottom: 10px;
 }
 
@@ -408,7 +409,7 @@ a {
   flex-direction: row;
   justify-content: end;
 }
-.search-bar .input-group{
+.search-bar .input-group {
   width: 320px;
 }
 .qa_wrap {
@@ -422,7 +423,7 @@ a {
 .qa-list_wrap .qa-item {
   margin-bottom: 2em;
 }
-.qa-list_wrap .question{
+.qa-list_wrap .question {
   font-weight: bold;
 }
 .align-center {
@@ -431,10 +432,13 @@ a {
   align-items: center;
 }
 .order-product {
-  width: 530px;
+  width: 400px;
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+.order-item {
+  font-size: 12px;
 }
 .order-img {
   margin-right: 20px;
@@ -442,7 +446,44 @@ a {
 .order-product-detail {
   width: 300px;
 }
-.price, .quantities,.total-amount,.comment{
- flex: 1;
- text-align: center;
+.price,
+.create-date,
+.order-state,
+.quantities,
+.total-amount {
+  flex: 1;
+  text-align: center;
+}
+.operation {
+  width: 160px;
+}
+.operation button {
+  margin-right: 2px;
+}
+.bg {
+  position: absolute;
+  z-index: -1;
+  top: 77px;
+  width: 100%;
+  height: 450px;
+  background-image: url(../img/bg/bg-3.jpg);
+}
+.checkout_wrap {
+  text-align: left;
+}
+.per-price {
+  margin-left: 1em;
+}
+.order-img {
+  width: 105px;
+  height: 60px;
+}
+.order-product-title {
+  text-align: left;
+}
+.checkout-product {
+  margin: 1em 0;
+}
+.bill-id {
+    margin-right: 2em;
 }

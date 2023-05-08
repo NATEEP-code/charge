@@ -96,7 +96,7 @@
                 </div>
             </div>
         </header>
-
+        <div class="bg"></div>
         <!-- content end -->
         <div class="container product_wrap marketing">
             <div class="product">
@@ -302,9 +302,10 @@
             <p v-text="countedPrice.desc"></p>
             <el-descriptions :column="1">
                 <el-descriptions-item label="Products" v-text="countedPrice.name">{{countedPrice.name}}</el-descriptions-item>
+                <el-descriptions-item label="Price (USD)" v-text="countedPrice.price">{{'$ ' + countedPrice.price}}</el-descriptions-item>
                 <el-descriptions-item label="Quantities" v-text="validForm.num">{{validForm.num}}</el-descriptions-item>
                 <el-descriptions-item label="Recharge Account" v-text="validForm.account">{{validForm.account}}</el-descriptions-item>
-                <el-descriptions-item label="Total" v-text="countedPrice.dataSpecial">{{'USD$ ' + countedPrice.dataSpecial}}</el-descriptions-item>
+                <el-descriptions-item label="Total (USD)" v-text="countedPrice.dataSpecial">{{'$ ' + countedPrice.dataSpecial}}</el-descriptions-item>
             </el-descriptions>
             <!-- bill-form start -->
             <form v-show="false" action="http://www.baidu.com">
@@ -427,8 +428,10 @@
                 let desc = ''
                 let name = ''
                 let title = ''
+                let price =''
                 const selectedProduct = this.productList.find(p => p.code === this.productCode)
                 if (selectedProduct) {
+                    price = selectedProduct.dataSpecial
                     image = selectedProduct.image
                     desc = selectedProduct.desc
                     name = selectedProduct.name
@@ -442,7 +445,8 @@
                     image,
                     title,
                     desc,
-                    name
+                    name,
+                    price
                 }
             }
         },

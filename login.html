@@ -131,13 +131,12 @@
 <script src="./assets/vendor/js/bootstrap.bundle.min.js"></script>
 <script>
     window.onload = (() => {
-        window.onload = (() => {
         const account = document.getElementById('floatingInput')
         const password = document.getElementById('floatingPassword')
         const signInBtn = document.getElementById('signInBtn')
         const closeBtn = document.getElementById('login-alert-close')
         const checkEmptyForm = () => {
-            if (account.value && password.value ) {
+            if (account.value && password.value) {
                 signInBtn.className = signInBtn.className.replace('disabled', '')
             } else {
                 const hasDisabled = signInBtn.className.includes('disabled')
@@ -154,7 +153,6 @@
             const className = parentNode.className
             parentNode.className = parentNode.className.replace('show', '')
         })
-    })
     })
 </script>
 

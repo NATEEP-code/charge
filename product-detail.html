@@ -116,7 +116,9 @@
                         <div class="product-pick_area">
                             <el-radio-group type="warning" v-model="productCode" size="small">
                                 <el-radio-button v-for="item in productList"
-                                    :label="item.code">{{item.name}}</el-radio-button>
+                                    :label="item.code">
+                                    <span v-text="item.name"></span>
+                                </el-radio-button>
                             </el-radio-group>
                             <el-form  ref="ruleform" class="product-option-form" size="medium" label-width="148px"
                                 label-position="left" :model="validForm">
@@ -135,7 +137,7 @@
                                 <span class="price">
                                     <span class="origin-price" v-text="`USD$ ${countedPrice.dataSale}`"></span>
                                     <span class="discounted-price" v-text="`USD$ ${countedPrice.dataSpecial}`"></span>
-                                    <span>&nbsp;Buy Now&nbsp;</span>
+                                    <span style="padding-left: 1em;" v-text="`Buy Now`"></span>
                                 </span>
                             </el-button>
                         </div>
@@ -323,7 +325,6 @@
     </div>
 </body>
 <script src="https://unpkg.com/vue@2/dist/vue.js"></script>
-<!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14"></script> -->
 <script src="https://unpkg.com/element-ui/lib/index.js"></script>
 <script src="./assets/vendor/js/bootstrap.bundle.min.js"></script>
 <script>

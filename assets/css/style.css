@@ -3,6 +3,7 @@ body {
   margin: 0;
   padding: 0;
 }
+
 html,
 body {
   font-size: 14px;
@@ -85,6 +86,7 @@ a {
   border-radius: 5px;
   cursor: pointer;
 }
+
 .product-item:hover {
   border: 2px solid orange;
   border-radius: 5px;
@@ -123,7 +125,7 @@ a {
 }
 
 .index-title {
-  margin: 3em 0;
+  padding: 3em 0;
   text-align: center;
   line-height: 1;
 }
@@ -250,11 +252,11 @@ a {
 }
 
 .el-radio-group .el-radio-button {
-  margin-right: 0.5em;
-  margin-bottom: 1em;
+  margin-right: 5px;
+  margin-bottom: 5px;
 }
 
-.el-radio-group .el-radio-button > .el-radio-button__inner {
+.el-radio-group .el-radio-button>.el-radio-button__inner {
   border: 1px solid #dcdfe6;
   border-radius: 5px;
 }
@@ -272,7 +274,6 @@ a {
 
 .buy-btn {
   width: 350px;
-  background-color: #ff4200;
 }
 
 .product-pick_area {
@@ -308,8 +309,8 @@ a {
   position: relative;
 }
 
-.fast-buy > .fast-buy-item:nth-child(even),
-.fast-buy > .fast-buy-item:nth-child(even)::after {
+.fast-buy>.fast-buy-item:nth-child(even),
+.fast-buy>.fast-buy-item:nth-child(even)::after {
   background-color: #f0f0f0;
 }
 
@@ -329,7 +330,7 @@ a {
   transform: translateX(-50%) rotate(45deg);
 }
 
-.fast-buy > .fast-buy-item:last-child::after {
+.fast-buy>.fast-buy-item:last-child::after {
   height: 0;
   width: 0;
 }
@@ -379,23 +380,28 @@ a {
 .product-info .el-button--primary.is-disabled:hover {
   cursor: default;
 }
+
 .pagination_wrap {
   display: flex;
   justify-content: center;
 }
+
 .commet-item-header .user-name {
   margin-left: 0.5em;
   color: #939393;
   position: relative;
   top: 2px;
 }
+
 .product-name {
   line-height: 2;
   font-size: 16px;
 }
+
 .product-list {
   padding: 0 4em;
 }
+
 .product-list .list-item,
 .hot-product {
   padding-bottom: 10px;
@@ -409,43 +415,55 @@ a {
   flex-direction: row;
   justify-content: end;
 }
+
 .search-bar .input-group {
   width: 320px;
 }
+
 .qa_wrap {
   display: flex;
   flex-direction: column;
   height: 100%;
 }
+
 .qa-list_wrap {
   flex: 1;
 }
+
 .qa-list_wrap .qa-item {
   margin-bottom: 2em;
 }
+
 .qa-list_wrap .question {
   font-weight: bold;
 }
+
 .align-center {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
 .order-product {
   width: 400px;
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
+
 .order-item {
   font-size: 12px;
 }
+
 .order-img {
   margin-right: 20px;
 }
+
 .order-product-detail {
   width: 300px;
 }
+
 .price,
 .create-date,
 .order-state,
@@ -454,12 +472,15 @@ a {
   flex: 1;
   text-align: center;
 }
+
 .operation {
   width: 160px;
 }
+
 .operation button {
   margin-right: 2px;
 }
+
 .bg {
   position: absolute;
   z-index: -1;
@@ -468,22 +489,91 @@ a {
   height: 450px;
   background-image: url(../img/bg/bg-3.jpg);
 }
+
 .checkout_wrap {
   text-align: left;
 }
+
 .per-price {
   margin-left: 1em;
 }
+
 .order-img {
   width: 105px;
   height: 60px;
 }
+
 .order-product-title {
   text-align: left;
 }
+
 .checkout-product {
   margin: 1em 0;
 }
-.bill-id {
+
+/* .bill-id {
     margin-right: 2em;
+} */
+.operation-btn {
+  width: 84px;
+  margin-bottom: 10px;
+}
+
+.btn-outline-success a {
+  --bs-btn-color: #198754;
+  --bs-btn-border-color: #198754;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #198754;
+  --bs-btn-hover-border-color: #198754;
+  --bs-btn-focus-shadow-rgb: 25, 135, 84;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #198754;
+  --bs-btn-active-border-color: #198754;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #198754;
+  --bs-btn-disabled-bg: transparent;
+  --bs-btn-disabled-border-color: #198754;
+  --bs-gradient: none;
+}
+
+.operation-btn:hover a {
+  color: var(--bs-btn-hover-color);
+  background-color: var(--bs-btn-hover-bg);
+  border-color: var(--bs-btn-hover-border-color);
+}
+
+/* .operation-btn  {
+  color: ;
+} */
+.flex-direcation-row {
+  flex-direction: row;
+}
+
+#Q-Code {
+  width: 200px;
+  height: 200px;
+}
+
+.danger {
+  color: #ff4200;
+}
+
+.order-info {
+  margin: 0;
+}
+
+.checkout_wrap .list-group-item {
+  padding: 1em 1.5em;
+}
+
+.checkout-padding {
+  padding: 0.5em 0;
+}
+
+.about-title {
+padding-bottom: 1em;
+}
+
+.abourt-container {
+  padding: 2em;
 }

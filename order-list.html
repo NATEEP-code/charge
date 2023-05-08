@@ -11,176 +11,275 @@
     <link rel="stylesheet" href="./assets/css/headers.css" class="css">
     <link rel="stylesheet" href="./assets/css/list-groups.css" class="css">
     <link rel="stylesheet" href="./assets/css/style.css" class="css">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+
 </head>
 
 <body>
-    <!-- Header start -->
-    <header class="p-3 text-bg-dark">
-        <div class="container">
-            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-                    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
-                        <use xlink:href="#bootstrap" />
-                    </svg>
-                </a>
-
-                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
-                    <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
-                    <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
-                    <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
-                    <li><a href="#" class="nav-link px-2 text-white">About</a></li>
-                </ul>
-
-                <nav class="navbar navbar-expand-md navbar-dark bg-dark" aria-label="Fourth navbar example">
-                    <div class="container-fluid">
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false"
-                            aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-
-                        <div class="collapse navbar-collapse" id="navbarsExample04">
-                            <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
-                                        aria-expanded="false"><img src="./assets/img/icon/USD.jpg" alt=""
-                                            class="src language-item">English</a>
-                                    <ul class="dropdown-menu language">
-                                        <li>
-                                            <a class="dropdown-item" href="#">
-                                                <img src="./assets/img/icon/CNY.jpg" alt="" class="src language-item">
-                                                Simplified Chinese
-                                            </a>
-                                        </li>
-                                        <li>
-
-                                            <a class="dropdown-item" href="#">
-                                                <img src="./assets/img/icon/CNY.jpg" alt="" class="src language-item">
-                                                Traditional Chinese</a>
-                                        </li>
-                                        <li>
-
-                                            <a class="dropdown-item" href="#">
-                                                <img src="./assets/img/icon/USD.jpg" alt="" class="src language-item">
-                                                English</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-
-
-                <div class="dropdown text-end">
-                    <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+    <div id="app">
+        <!-- Header start -->
+        <header class="p-3 text-bg-dark">
+            <div class="container">
+                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                    <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
+                            <use xlink:href="#bootstrap" />
+                        </svg>
                     </a>
-                    <ul class="dropdown-menu text-small">
-                        <li><a class="dropdown-item" href="#">My orders</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">Sign out</a></li>
+
+                    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                        <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
+                        <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
+                        <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
+                        <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
+                        <li><a href="#" class="nav-link px-2 text-white">About</a></li>
                     </ul>
-                </div>
-            </div>
-        </div>
-    </header>
 
-    <!-- Header end -->
-    <div class="container order-list_wrap">
-        <div class="index-title">
-            <h2>ORDERS</h2>
-        </div>
-        <div class="list-group w-auto order-list">
-            <!-- order header start -->
-            <div class=" list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-                <div class="title d-flex gap-2 w-100 justify-content-between order-detail">
-                    <div class="order-product">Products</div>
-                    <div class="price ">Price</div>
-                    <div class="quantities ">Quantities</div>
-                    <div class="order-state ">State</div>
-                    <div class="create-date ">CreateDate</div>
-                    <div class="total-amount ">Total Amount</div>
-                    <div class="operation">Operation</div>
+                    <nav class="navbar navbar-expand-md navbar-dark bg-dark" aria-label="Fourth navbar example">
+                        <div class="container-fluid">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarsExample04" aria-controls="navbarsExample04"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+
+                            <div class="collapse navbar-collapse" id="navbarsExample04">
+                                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
+                                            aria-expanded="false"><img src="./assets/img/icon/USD.jpg" alt=""
+                                                class="src language-item">English</a>
+                                        <ul class="dropdown-menu language">
+                                            <li>
+                                                <a class="dropdown-item" href="#">
+                                                    <img src="./assets/img/icon/CNY.jpg" alt=""
+                                                        class="src language-item">
+                                                    Simplified Chinese
+                                                </a>
+                                            </li>
+                                            <li>
+
+                                                <a class="dropdown-item" href="#">
+                                                    <img src="./assets/img/icon/CNY.jpg" alt=""
+                                                        class="src language-item">
+                                                    Traditional Chinese</a>
+                                            </li>
+                                            <li>
+
+                                                <a class="dropdown-item" href="#">
+                                                    <img src="./assets/img/icon/USD.jpg" alt=""
+                                                        class="src language-item">
+                                                    English</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+
+
+                    <div class="dropdown text-end">
+                        <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32"
+                                class="rounded-circle">
+                        </a>
+                        <ul class="dropdown-menu text-small">
+                            <li><a class="dropdown-item" href="#">My orders</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Sign out</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <!-- order header end -->
-            <div class="order-item list-group-item list-group-item-action gap-3 py-3" aria-current="true">
-                
-                <div class="d-flex gap-2 w-100 justify-content-between order-detail">
-                    <div class="order-product ">
-                        <div class="align-center">
-                            <img class="order-img" src="./assets/img/products/douyin.jpg" alt="">
+        </header>
+
+        <!-- Header end -->
+        <div class="container order-list_wrap">
+            <div class="index-title">
+                <h2>ORDERS</h2>
+            </div>
+            <div class="list-group w-auto order-list">
+                <!-- order header start -->
+                <div class=" list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                    <div class="title d-flex gap-2 w-100 justify-content-between order-detail">
+                        <div class="order-product">Products</div>
+                        <div class="price ">Price</div>
+                        <div class="quantities ">Quantities</div>
+                        <div class="order-state ">State</div>
+                        <div class="total-amount ">Total Amount</div>
+                        <div class="create-date ">CreateDate</div>
+                        <div class="operation">Operation</div>
+                    </div>
+                </div>
+                <!-- order header end -->
+                <div class="order-item list-group-item list-group-item-action gap-3 py-3" aria-current="true"
+                    order-id="20230508312312">
+                    <div class="d-flex gap-2 w-100 justify-content-between order-detail">
+                        <div class="order-product ">
+                            <div class="align-center">
+                                <img class="order-img" src="./assets/img/products/douyin.jpg" alt="">
+                            </div>
+                            <div class="align-center" style="align-items: start;">
+                                <h5 class="title order-product-title">
+                                    Douyin(TikTok in China)
+                                </h5>
+                                <p class=" order-product-detail">Douyin(TikTok in China) <span class="count">3000</span>
+                                    <span class="unit">Diamonds</span><span class="discount">(17%)</span>
+                                </p>
+                                <p class="order-info">
+                                    <small class="text-muted bill-id">#20230508312312 </small>
+                                </p>
+                            </div>
                         </div>
-                        <div>
-                            <p class="order-info">
-                                <small class="text-muted bill-id">No:20230508312312 </small>
-                            </p>
-                            <h5 class="title order-product-title">
-                                Douyin(TikTok in China)
-                            </h5>
-                            <p class=" order-product-detail">Douyin(TikTok in China) <span class="count">3000</span>
-                                <span class="unit">Diamonds</span><span class="discount">(17%)</span>
-                            </p>
+
+                        <div class="price align-center">USD$ 17.25</div>
+                        <div class="quantities align-center flex-direcation-row"><i class="bi bi-x"></i> 2 </div>
+                        <!-- <div class="create-date align-center"></div> -->
+                        <div class="order-state align-center ">Pedding</div>
+                        <div class="total-amount align-center">USD$ 34.5</div>
+                        <div class="create-date align-center">2023-05-08 16:07</div>
+                        <div class="operation align-center">
+                            <div>
+                                <a href="javascript:void(0)">
+                                    <button type="button" class="btn btn-outline-success operation-btn">Pay Now
+                                    </button>
+                                </a>
+
+                            </div>
+                            <div>
+                                <a href="javascript:void(0)">
+                                    <button type="button" class="btn btn-outline-danger operation-btn">Cancel
+                                    </button>
+                                </a>
+
+                            </div>
+                            <div>
+                                <a href="javascript:void(0)">
+                                    <button @click="commetHandler" type="button"
+                                        class="btn btn-outline-primary operation-btn comment">Comment
+                                    </button>
+                                </a>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="price align-center">USD$ 17.25</div>
-                    <div class="quantities align-center"><i class="bi bi-x"></i> 2 </div>
-                    <!-- <div class="create-date align-center"></div> -->
-                    <div class="order-state align-center">Pedding</div>
-                    <div class="create-date align-center">2023-05-08 16:07</div>
-                    <div class="total-amount align-center">USD$ 34.5</div>
-                    <div class="operation align-center">
-                        <!-- <div><button type="button" class="btn btn-light">Comment</button></div> -->
-                        <div><button type="button" class="btn btn-outline-warning">Cancel</button></div>
-                        <div><button type="button" class="btn btn-outline-primary">Pay Now</button></div>
-                    </div>
                 </div>
             </div>
+            <div class="pagination_wrap">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </div>
-        <div class="pagination_wrap">
-            <nav aria-label="Page navigation example">
-                <ul class="pagination">
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+        <!-- Container start -->
+        <!-- Container end -->
+        <el-dialog :close-on-click-modal="false" title="Comment" :visible.sync="dialogFormVisible" width="750px" @close="clearForm">
+            <el-form :model="commentForm" ref="commentForm">
+                <el-form-item label="" prop="rate" required>
+                    <el-rate v-model="commentForm.rate"></el-rate>
+                </el-form-item>
+                <el-form-item label="" prop="comment" required>
+                    <el-input type="textarea" :rows="5" placeholder="please type your comment"
+                        v-model="commentForm.comment"></el-input>
+                </el-form-item>
+            </el-form>
+            <!-- comment form -->
 
+            <div slot="footer" class="dialog-footer">
+                <el-button size="mini" v-text="'Cancel'" @click="closeDialog"></el-button>
+                <el-button size="mini" type="primary" v-text="'Confirm'" @click="confirm"
+                    :loading="loading"></el-button>
+            </div>
+        </el-dialog>
+        <!-- Footer start -->
+        <footer class="py-3 my-4">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+            </ul>
+            <p class="text-center text-muted">&copy; 2022 Company, Inc</p>
+        </footer>
+        <!-- Footer end -->
     </div>
 
-    <!-- Container start -->
-    <!-- Container end -->
 
-    <!-- Footer start -->
-    <footer class="py-3 my-4">
-        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
-        </ul>
-        <p class="text-center text-muted">&copy; 2022 Company, Inc</p>
-    </footer>
-    <!-- Footer end -->
 </body>
+<script src="https://unpkg.com/vue@2/dist/vue.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
 <script src="./assets/vendor/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data() {
+            return {
+                message: '312',
+                dialogFormVisible: false,
+                commentForm: {
+                    id: '',
+                    comment: '',
+                    rate: 5
+                },
+                loading: false
+            }
+        },
+        methods: {
+            closeDialog() {
+                this.dialogFormVisible = false
+            },
+            confirm() {
+                this.$refs.commentForm.validate((valid) => {
+                    if (valid) {
+                        this.loading = true
+                        axios.post('http://www.baidu.com', this.commentForm)
+                            .then(function (response) {
+                                window.location.reload()
+                            })
+                            .catch(function (error) {
+                                this.$message.error('评论失败')
+                            })
+                            .finally(() => {
+                                this.loading = false
+                            });
+                        this.closeDialog()
+                    } else {
+                        console.log('error submit!!');
+                        return false;
+                    }
+                });
+            },
+            clearForm(){
+                this.$refs.commentForm.resetFields()
+            },
+            commetHandler($event) {
+                this.dialogFormVisible = true
+                const { target } = $event
+                const productId = target.offsetParent.getAttribute('order-id')
+                productId && (this.commentForm.id = productId)
+            }
+        }
+
+    })
+</script>
 
 </html>

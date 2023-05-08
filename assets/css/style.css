@@ -577,3 +577,7 @@ padding-bottom: 1em;
 .abourt-container {
   padding: 2em;
 }
+
+.avatar::after {
+  color: #939393;
+}

@@ -581,3 +581,33 @@ padding-bottom: 1em;
 .avatar::after {
   color: #939393;
 }
+
+.comment-list_wrap .list-group-item-action:focus, .comment-list_wrap .list-group-item-action:hover {
+  z-index: 1;
+  color: var(--bs-list-group-color);
+  text-decoration: none;
+  background-color: var(--bs-list-group-bg);
+}
+.info-detail {
+  padding-left: 2em;
+  color: #363636;
+  flex-direction: column;
+}
+.info-img {
+  width: 160px;
+  height: 80px;
+}
+.default-color {
+  color: #363636;
+}
+.info-detail .title {
+  color: #000;
+  text-align: left;
+  font-size: 24px;
+}
+.info-detail .title:hover{
+  text-decoration: underline #363636;
+}
+.info-list-item {
+  border-bottom: 1px solid #ccc;
+}
